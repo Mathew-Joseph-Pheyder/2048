@@ -2,9 +2,9 @@ import mayflower.Actor;
 import mayflower.Keyboard;
 import mayflower.Mayflower;
 
-public class four extends Actor
+public class Four extends Actor
 {
-    public four()
+    public Four()
     {
         setImage("img/wall.png");
     }
