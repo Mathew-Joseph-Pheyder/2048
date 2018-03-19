@@ -9,7 +9,8 @@ public class Runner extends Mayflower
 
     public Runner()
     {
-        super("2048",400,636);
+        super("2048",780,816);
+        Mayflower.setWorld(new Grid());
     }
 
     public static void main(String[] args)
