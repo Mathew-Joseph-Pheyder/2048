@@ -5,7 +5,7 @@ public class Grid extends World
 
     public Grid()
     {
-      addObject(new Box(),100 ,200);
+      addObject(new Tile(2),100 ,200);
 
     }
 
