@@ -1,6 +1,8 @@
 import mayflower.*;
 public class Tile extends Actor{
+    private int value;
     public Tile(int num){
+        value = num;
         if(num == 2){
             setImage("rsrc/2tile.png");
         }
@@ -32,7 +34,9 @@ public class Tile extends Actor{
             setImage("rsrc/1024tile.png");
         }
     }
-    
+    public int getValue(){
+        return value;
+    }
     public void act() {
 
     }
