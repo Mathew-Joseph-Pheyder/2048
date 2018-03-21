@@ -42,19 +42,19 @@ public class Tile extends Actor{
 
         if(Mayflower.isKeyPressed(Keyboard.KEY_UP))
         {
-            setLocation(getX(),getY()-5);
+            setLocation(getX(),getY()-65);
         }
         if(Mayflower.isKeyPressed(Keyboard.KEY_DOWN))
         {
-            setLocation(getX(),getY()+5);
+            setLocation(getX(),getY()+65);
         }
         if(Mayflower.isKeyPressed(Keyboard.KEY_LEFT))
         {
-            setLocation(getX()-5,getY());
+            setLocation(getX()-65,getY());
         }
         if(Mayflower.isKeyPressed(Keyboard.KEY_RIGHT))
         {
-            setLocation(getX()+5,getY());
+            setLocation(getX()+65,getY());
         }
 
 
