@@ -11,7 +11,7 @@ public class Grid extends World
 
     public void act()
     {
-    
+
     }
 
 }
