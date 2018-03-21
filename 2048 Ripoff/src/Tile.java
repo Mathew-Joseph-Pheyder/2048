@@ -1,4 +1,7 @@
-import mayflower.*;
+import mayflower.Actor;
+import mayflower.Keyboard;
+import mayflower.Mayflower;
+
 public class Tile extends Actor{
     private int value;
     private int[] controls;
@@ -10,6 +13,7 @@ public class Tile extends Actor{
         controls[2] = Keyboard.KEY_LEFT;
         controls[3] = Keyboard.KEY_RIGHT;
         if(num == 2){
+            System.out.println("2 added");
             setImage("rsrc/2tile.png");
         }
         else if(num == 4){
@@ -62,6 +66,24 @@ public class Tile extends Actor{
         {
             if(getX() < 665) setLocation(getX()+65,getY());
         }
+
+        if(Mayflower.isKeyPressed(Keyboard.KEY_UP))
+        {
+            setLocation(getX(),getY()-65);
+        }
+        if(Mayflower.isKeyPressed(Keyboard.KEY_DOWN))
+        {
+            setLocation(getX(),getY()+65);
+        }
+        if(Mayflower.isKeyPressed(Keyboard.KEY_LEFT))
+        {
+            setLocation(getX()-65,getY());
+        }
+        if(Mayflower.isKeyPressed(Keyboard.KEY_RIGHT))
+        {
+            setLocation(getX()+65,getY());
+        }
+
 
     }
 }

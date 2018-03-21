@@ -1,4 +1,4 @@
-import mayflower.*;
+import mayflower.Mayflower;
 
 public class Runner extends Mayflower
 {
