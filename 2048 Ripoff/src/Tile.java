@@ -3,6 +3,8 @@ import mayflower.*;
 public class Tile extends Actor{
     private int value;
     private int[] controls;
+    private Timer movementDelay = new Timer();
+
     public Tile(int num){
         value = num;
         controls = new int[4];
@@ -48,40 +50,48 @@ public class Tile extends Actor{
     public void act() {
         if(Mayflower.isKeyPressed(Keyboard.KEY_UP) && !Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT))
         {
-            if(getY() > 0) setLocation(getX(), getY() - 65);
+            while(getY() > 0)
+            {
+
+                movementDelay.set(10000);
+                if(movementDelay.isDone())
+                    setLocation(getX(), getY() - 65);
+            }
 
         }
         if(Mayflower.isKeyPressed(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_UP) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT))
         {
-            if(getY() < 665) setLocation(getX(), getY() + 65);
+            while(getY() < 665)
+            {
+
+                movementDelay.set(10000);
+                if(movementDelay.isDone())
+                    setLocation(getX(), getY() + 65);
+            }
 
         }
         if(Mayflower.isKeyPressed(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_UP) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT))
         {
-            if(getX() > 0) setLocation(getX()-65,getY());
+            while(getX() > 0)
+            {
+
+                movementDelay.set(10000);
+                if(movementDelay.isDone())
+                    setLocation(getX()-65,getY());
+            }
+
         }
         if(Mayflower.isKeyPressed(Keyboard.KEY_RIGHT) && !Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_UP))
         {
-            if(getX() < 665) setLocation(getX()+65,getY());
-        }
+            while(getX() < 665)
+            {
 
-        if(Mayflower.isKeyPressed(Keyboard.KEY_UP))
-        {
-            setLocation(getX(),getY()-65);
+                movementDelay.set(10000);
+                if(movementDelay.isDone())
+                    setLocation(getX()+65,getY());
+            }
         }
-        if(Mayflower.isKeyPressed(Keyboard.KEY_DOWN))
-        {
-            setLocation(getX(),getY()+65);
-        }
-        if(Mayflower.isKeyPressed(Keyboard.KEY_LEFT))
-        {
-            setLocation(getX()-65,getY());
-        }
-        if(Mayflower.isKeyPressed(Keyboard.KEY_RIGHT))
-        {
-            setLocation(getX()+65,getY());
-        }
-
 
     }
+
 }
