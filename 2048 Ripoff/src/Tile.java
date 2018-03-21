@@ -4,6 +4,7 @@ public class Tile extends Actor{
     public Tile(int num){
         value = num;
         if(num == 2){
+            System.out.println("2 added");
             setImage("rsrc/2tile.png");
         }
         else if(num == 4){
@@ -38,6 +39,24 @@ public class Tile extends Actor{
         return value;
     }
     public void act() {
+
+        if(Mayflower.isKeyPressed(Keyboard.KEY_UP))
+        {
+            setLocation(getX(),getY()-5);
+        }
+        if(Mayflower.isKeyPressed(Keyboard.KEY_DOWN))
+        {
+            setLocation(getX(),getY()+5);
+        }
+        if(Mayflower.isKeyPressed(Keyboard.KEY_LEFT))
+        {
+            setLocation(getX()-5,getY());
+        }
+        if(Mayflower.isKeyPressed(Keyboard.KEY_RIGHT))
+        {
+            setLocation(getX()+5,getY());
+        }
+
 
     }
 }
