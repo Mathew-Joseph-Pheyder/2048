@@ -1,5 +1,4 @@
 import mayflower.*;
-
 public class Tile extends Actor{
     private int value;
     public Tile(int num){
