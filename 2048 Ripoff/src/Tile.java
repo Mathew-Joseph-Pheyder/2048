@@ -4,6 +4,9 @@ public class Tile extends Actor{
 <<<<<<< HEAD
 =======
     private int[] controls;
+<<<<<<< HEAD
+>>>>>>> parent of 77804f2... boxes move to edge and theres a timer for movement now.
+=======
 >>>>>>> parent of 77804f2... boxes move to edge and theres a timer for movement now.
     public Tile(int num){
         value = num;
@@ -48,6 +51,9 @@ public class Tile extends Actor{
         if(Mayflower.isKeyPressed(Keyboard.KEY_UP) && !Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT))
         {
             if(getY() > 0) setLocation(getX(), getY() - 65);
+<<<<<<< HEAD
+>>>>>>> parent of 77804f2... boxes move to edge and theres a timer for movement now.
+=======
 >>>>>>> parent of 77804f2... boxes move to edge and theres a timer for movement now.
 
         if(Mayflower.isKeyPressed(Keyboard.KEY_UP))
@@ -57,8 +63,11 @@ public class Tile extends Actor{
         if(Mayflower.isKeyPressed(Keyboard.KEY_DOWN))
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             setLocation(getX(),getY()+65);
 =======
+=======
+>>>>>>> parent of 77804f2... boxes move to edge and theres a timer for movement now.
             if(getY() < 665) setLocation(getX(), getY() + 65);
 
 >>>>>>> parent of 77804f2... boxes move to edge and theres a timer for movement now.
@@ -66,7 +75,11 @@ public class Tile extends Actor{
         if(Mayflower.isKeyPressed(Keyboard.KEY_LEFT))
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             setLocation(getX()-65,getY());
+=======
+            if(getX() > 0) setLocation(getX()-65,getY());
+>>>>>>> parent of 77804f2... boxes move to edge and theres a timer for movement now.
 =======
             if(getX() > 0) setLocation(getX()-65,getY());
 >>>>>>> parent of 77804f2... boxes move to edge and theres a timer for movement now.
@@ -74,7 +87,10 @@ public class Tile extends Actor{
         if(Mayflower.isKeyPressed(Keyboard.KEY_RIGHT))
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 77804f2... boxes move to edge and theres a timer for movement now.
             if(getX() < 665) setLocation(getX()+65,getY());
         }
 
@@ -92,6 +108,9 @@ public class Tile extends Actor{
         }
         if(Mayflower.isKeyPressed(Keyboard.KEY_RIGHT))
         {
+<<<<<<< HEAD
+>>>>>>> parent of 77804f2... boxes move to edge and theres a timer for movement now.
+=======
 >>>>>>> parent of 77804f2... boxes move to edge and theres a timer for movement now.
             setLocation(getX()+65,getY());
         }
