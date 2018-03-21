@@ -2,16 +2,14 @@ import mayflower.Actor;
 import mayflower.Keyboard;
 import mayflower.Mayflower;
 
+import java.util.List;
+
 public class Tile extends Actor{
     private int value;
-    private int[] controls;
+
     public Tile(int num){
         value = num;
-        controls = new int[4];
-        controls[0] = Keyboard.KEY_UP;
-        controls[1] = Keyboard.KEY_DOWN;
-        controls[2] = Keyboard.KEY_LEFT;
-        controls[3] = Keyboard.KEY_RIGHT;
+
         if(num == 2){
             System.out.println("2 added");
             setImage("rsrc/2tile.png");
@@ -47,6 +45,44 @@ public class Tile extends Actor{
     public int getValue(){
         return value;
     }
+    public boolean canCombine(String direction){
+        List<Tile> neighbors = getNeighbors(65,false,Tile.class);
+        for(int i = 0; i < neighbors.size();i++){
+            //if tile is to the right
+            if(direction.toLowerCase().equals("right")) {
+                if (this.getX() + 65 == neighbors.get(i).getX()) {
+                    if (this.getValue() == neighbors.get(i).getValue()) {
+                        return true;
+                    }
+                }
+            }
+            //if tile is to the left
+            if(direction.toLowerCase().equals("left")) {
+                if (this.getX() - 65 == neighbors.get(i).getX()) {
+                    if (this.getValue() == neighbors.get(i).getValue()) {
+                        return true;
+                    }
+                }
+            }
+            //if tile is below
+            if(direction.toLowerCase().equals("down")) {
+                if (this.getY() + 65 == neighbors.get(i).getY()) {
+                    if (this.getValue() == neighbors.get(i).getValue()) {
+                        return true;
+                    }
+                }
+            }
+            //if tile is above
+            if(direction.toLowerCase().equals("up")) {
+                if (this.getY() + 65 == neighbors.get(i).getY()) {
+                    if (this.getValue() == neighbors.get(i).getValue()) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
     public void act() {
         if(Mayflower.isKeyPressed(Keyboard.KEY_UP) && !Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT))
         {
@@ -67,22 +103,7 @@ public class Tile extends Actor{
             if(getX() < 665) setLocation(getX()+65,getY());
         }
 
-        if(Mayflower.isKeyPressed(Keyboard.KEY_UP))
-        {
-            setLocation(getX(),getY()-65);
-        }
-        if(Mayflower.isKeyPressed(Keyboard.KEY_DOWN))
-        {
-            setLocation(getX(),getY()+65);
-        }
-        if(Mayflower.isKeyPressed(Keyboard.KEY_LEFT))
-        {
-            setLocation(getX()-65,getY());
-        }
-        if(Mayflower.isKeyPressed(Keyboard.KEY_RIGHT))
-        {
-            setLocation(getX()+65,getY());
-        }
+      
 
 
     }
