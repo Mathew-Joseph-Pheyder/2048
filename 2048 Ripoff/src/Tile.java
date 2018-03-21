@@ -1,4 +1,7 @@
-import mayflower.*;
+import mayflower.Actor;
+import mayflower.Keyboard;
+import mayflower.Mayflower;
+
 public class Tile extends Actor{
     private int value;
     public Tile(int num){
