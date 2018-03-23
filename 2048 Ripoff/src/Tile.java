@@ -87,9 +87,8 @@ public class Tile extends Actor{
     public void act() {
         if(Mayflower.isKeyPressed(Keyboard.KEY_UP) && !Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT))
         {
-            while(getY() > 0)
+            while((getY() > 65))
             {
-
                 movementDelay.set(10000);
                 if(movementDelay.isDone())
                     setLocation(getX(), getY() - 65);
@@ -98,7 +97,7 @@ public class Tile extends Actor{
         }
         if(Mayflower.isKeyPressed(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_UP) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT))
         {
-            while(getY() < 665)
+            while((getY() < 288))
             {
 
                 movementDelay.set(10000);
@@ -109,7 +108,7 @@ public class Tile extends Actor{
         }
         if(Mayflower.isKeyPressed(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_UP) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT))
         {
-            while(getX() > 0)
+            while((getX() > 65))
             {
 
                 movementDelay.set(10000);
@@ -120,7 +119,7 @@ public class Tile extends Actor{
         }
         if(Mayflower.isKeyPressed(Keyboard.KEY_RIGHT) && !Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_UP))
         {
-            while(getX() < 665)
+            while((getX() < 288))
             {
 
                 movementDelay.set(10000);
