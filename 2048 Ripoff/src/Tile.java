@@ -86,7 +86,7 @@ public class Tile extends Actor{
             //setLocation(getX(),getY()-65);
             while(!hasTop())
             {
-                if(getY()<=1)
+                if(getY()<=1)   
                 {
                     System.out.println("break");
                     break;
