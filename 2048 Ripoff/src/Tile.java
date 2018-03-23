@@ -7,6 +7,10 @@ public class Tile extends Actor{
     private String n;
     int curX;
     int curY;
+    public Tile(int num)
+    {
+        this(num,"");
+    }
     public Tile(int num, String name){
         n=name;
         value = num;
@@ -86,7 +90,7 @@ public class Tile extends Actor{
             //setLocation(getX(),getY()-65);
             while(!hasTop())
             {
-                if(getY()<=1)   
+                if(getY()<=1)
                 {
                     System.out.println("break");
                     break;
