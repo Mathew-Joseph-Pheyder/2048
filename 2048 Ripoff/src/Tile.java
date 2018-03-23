@@ -32,7 +32,7 @@ public class Tile extends Actor {
         return value;
     }
 
-    public void act() {
+    public void act() {/*
 
         if (Mayflower.isKeyPressed(Keyboard.KEY_UP) && (!Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT))) {
             while ((getY() > 65)) {
@@ -61,6 +61,6 @@ public class Tile extends Actor {
 
             }
 
-        }
+        */}
     }
 
