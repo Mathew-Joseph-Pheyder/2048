@@ -2,7 +2,7 @@ import mayflower.*;
 
 public class Grid extends World
 {
-    int[][]Bmap = new int[12][12];
+    int[][]Bmap = new int[4][4];
     public Grid()
     {
         for(int i=0;i<Bmap.length;i++)

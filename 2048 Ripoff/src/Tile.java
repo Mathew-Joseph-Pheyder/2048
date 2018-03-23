@@ -61,7 +61,6 @@ public class Tile extends Actor {
 
             }
 
-
         }
     }
 
