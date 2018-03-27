@@ -1,5 +1,6 @@
 import mayflower.*;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 public class Grid extends World {
@@ -31,14 +32,13 @@ public class Grid extends World {
         }*/
 
     }
-
     public void act()
     {/*
         if (Mayflower.isKeyPressed(Keyboard.KEY_UP) && (!Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT)))
         {
             for (int i = 0; i < tiles.size(); i++)
             {
-                while ((tiles.get(i).getY() > 0))
+                while ((tiles.get(i).getY() > 0) && !tiles.get(i).hasTop())
                 {
                     tiles.get(i).setLocation(tiles.get(i).getX(), tiles.get(i).getY() - 65);
                 }
@@ -49,7 +49,7 @@ public class Grid extends World {
         {
             for (int i = 0; i < tiles.size(); i++)
             {
-                while ((tiles.get(i).getY() < 132))
+                while ((tiles.get(i).getY() < 132) && !tiles.get(i).hasBottom())
                 {
                     tiles.get(i).setLocation(tiles.get(i).getX(), tiles.get(i).getY() + 65);
                 }
@@ -60,7 +60,7 @@ public class Grid extends World {
         {
             for (int i = 0; i < tiles.size(); i++)
             {
-                while ((tiles.get(i).getX() > 0))
+                while ((tiles.get(i).getX() > 0)&& !tiles.get(i).hasLeft())
                 {
                     tiles.get(i).setLocation(tiles.get(i).getX()- 65, tiles.get(i).getY() );
                 }
@@ -71,7 +71,7 @@ public class Grid extends World {
         {
             for (int i = 0; i < tiles.size(); i++)
             {
-                while ((tiles.get(i).getX() < 132))
+                while ((tiles.get(i).getX() < 132)&& !tiles.get(i).hasRight())
                 {
                     tiles.get(i).setLocation(tiles.get(i).getX()+ 65, tiles.get(i).getY() );
                 }

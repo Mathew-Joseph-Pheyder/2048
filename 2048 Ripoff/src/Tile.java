@@ -52,10 +52,15 @@ public class Tile extends Actor{
 
 
 
+
     public boolean hasRight ()
     {
         List<Tile> r = getWorld().getObjectsAt(getX() + 65, getY(), Tile.class);
         if (r.isEmpty())
+                return false;
+            else
+                return true;
+        }
             return false;
         else
             return true;
@@ -90,7 +95,7 @@ public class Tile extends Actor{
     public void act() {
 
 
-        if (Mayflower.isKeyPressed(Keyboard.KEY_UP)) {
+        /*if (Mayflower.isKeyPressed(Keyboard.KEY_UP)) {
             System.out.println(n);
             //setLocation(getX(),getY()-65);
             while (!hasTop()) {
@@ -107,7 +112,7 @@ public class Tile extends Actor{
         if (Mayflower.isKeyPressed(Keyboard.KEY_DOWN)) {
             //setLocation(getX(),getY()+65);
             while (!hasBottom()) {
-                if (getY() >= 170) {
+                if (getY() >= 196) {
                     System.out.println("break");
                     break;
                 }
@@ -136,7 +141,7 @@ public class Tile extends Actor{
         if (Mayflower.isKeyPressed(Keyboard.KEY_RIGHT)) {
             //setLocation(getX()+65,getY());
             while (!hasRight()) {
-                if (getX() >= 170) {
+                if (getX() >= 196) {
                     System.out.println("break");
                     break;
                 }
@@ -148,11 +153,9 @@ public class Tile extends Actor{
             }
 
 
-        }
-
+        }*/
     }
 }
-
 
 
 
