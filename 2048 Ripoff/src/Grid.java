@@ -15,16 +15,20 @@ public class Grid extends World {
         int xPos = 0;
         int yPos = 0;
 
-        tiles.add(new Tile(2));
-        tiles.add(new Tile(4));
-        for (int i = 0; i < tiles.size(); i++)
+        this.addObject(new Tile(2),66,66);
+        this.addObject(new Tile(4),66,131);
+        this.addObject(new Tile(8),131,66);
+        //tiles.add(new Tile(2));
+        //tiles.add(new Tile(4));
+        //tiles.add(new Tile(8));
+        /*for (int i = 0; i < tiles.size(); i++)
         {
             xPos = rand.nextInt(3) + 1;
             yPos = rand.nextInt(3) + 1;
             xPos = xPos*65;
             yPos = yPos*65;
             addObject(tiles.get(i), xPos, yPos);
-        }
+        }*/
 
     }
 
