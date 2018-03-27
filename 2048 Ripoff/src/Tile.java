@@ -61,6 +61,10 @@ public class Tile extends Actor{
             else
                 return true;
         }
+            return false;
+        else
+            return true;
+    }
 
     public boolean hasLeft() {
         List<Tile> r = getWorld().getObjectsAt(getX() - 65, getY(), Tile.class);
