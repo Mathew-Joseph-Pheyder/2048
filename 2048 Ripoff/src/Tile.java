@@ -50,110 +50,108 @@ public class Tile extends Actor{
         return value;
     }
 
-    public boolean hasRight()
+
+
+    public boolean hasRight ()
     {
-        List<Tile> r = getWorld().getObjectsAt(getX()+65,getY(),Tile.class);
-        if(r.isEmpty())
+        List<Tile> r = getWorld().getObjectsAt(getX() + 65, getY(), Tile.class);
+        if (r.isEmpty())
             return false;
         else
             return true;
     }
-    public boolean hasLeft()
-    {
-        List<Tile> r = getWorld().getObjectsAt(getX()-65,getY(),Tile.class);
-        if(r.isEmpty())
+
+    public boolean hasLeft() {
+        List<Tile> r = getWorld().getObjectsAt(getX() - 65, getY(), Tile.class);
+        if (r.isEmpty())
             return false;
         else
             return true;
     }
-    public boolean hasTop()
-    {
-        List<Tile> r = getWorld().getObjectsAt(getX(),getY()-65,Tile.class);
-        if(r.isEmpty())
+
+    public boolean hasTop() {
+        List<Tile> r = getWorld().getObjectsAt(getX(), getY() - 65, Tile.class);
+        if (r.isEmpty())
             return false;
         else
             return true;
     }
-    public boolean hasBottom()
-    {
-        List<Tile> r = getWorld().getObjectsAt(getX(),getY()+65,Tile.class);
-        if(r.isEmpty())
+
+    public boolean hasBottom() {
+        List<Tile> r = getWorld().getObjectsAt(getX(), getY() + 65, Tile.class);
+        if (r.isEmpty())
             return false;
         else
             return true;
     }
+
     public void act() {
 
-        if(Mayflower.isKeyPressed(Keyboard.KEY_UP))
-        {
+
+        if (Mayflower.isKeyPressed(Keyboard.KEY_UP)) {
             System.out.println(n);
             //setLocation(getX(),getY()-65);
-            while(!hasTop())
-            {
-                if(getY()<=1)
-                {
+            while (!hasTop()) {
+                if (getY() <= 1) {
                     System.out.println("break");
                     break;
                 }
-                setLocation(getX(),getY()-65);
+                setLocation(getX(), getY() - 65);
                 System.out.println("top");
                 System.out.println(getY());
             }
 
         }
-        if(Mayflower.isKeyPressed(Keyboard.KEY_DOWN))
-        {
+        if (Mayflower.isKeyPressed(Keyboard.KEY_DOWN)) {
             //setLocation(getX(),getY()+65);
-            while(!hasBottom())
-            {
-                if(getY()>=196)
-                {
+            while (!hasBottom()) {
+                if (getY() >= 170) {
                     System.out.println("break");
                     break;
                 }
-                setLocation(getX(),getY()+65);
+                setLocation(getX(), getY() + 65);
                 System.out.println("bottom");
-                System.out.println("  current x value "+getX());
-                System.out.println("  current y value "+getY());
+                System.out.println("  current x value " + getX());
+                System.out.println("  current y value " + getY());
                 System.out.println("---------------------------");
             }
         }
-        if(Mayflower.isKeyPressed(Keyboard.KEY_LEFT))
-        {
+        if (Mayflower.isKeyPressed(Keyboard.KEY_LEFT)) {
             //setLocation(getX()-65,getY());
-            while(!hasLeft())
-            {
-                if(getX()<=1)
-                {
+            while (!hasLeft()) {
+                if (getX() <= 1) {
                     System.out.println("break");
                     break;
                 }
-                setLocation(getX()-65,getY());
+                setLocation(getX() - 65, getY());
                 System.out.println("bottom");
-                System.out.println("  current x value "+getX());
-                System.out.println("  current y value "+getY());
+                System.out.println("  current x value " + getX());
+                System.out.println("  current y value " + getY());
 
                 System.out.println("---------------------------");
             }
         }
-        if(Mayflower.isKeyPressed(Keyboard.KEY_RIGHT))
-        {
+        if (Mayflower.isKeyPressed(Keyboard.KEY_RIGHT)) {
             //setLocation(getX()+65,getY());
-            while(!hasLeft())
-            {
-                if(getX()>=196)
-                {
+            while (!hasRight()) {
+                if (getX() >= 170) {
                     System.out.println("break");
                     break;
                 }
-                setLocation(getX()+65,getY());
+                setLocation(getX() + 65, getY());
                 System.out.println("bottom");
-                System.out.println("  current x value "+getX());
-                System.out.println("  current y value "+getY());
+                System.out.println("  current x value " + getX());
+                System.out.println("  current y value " + getY());
                 System.out.println("---------------------------");
             }
+
+
         }
-        //curX=getX();
-        //curY=getY();
+
     }
 }
+
+
+
+
+
