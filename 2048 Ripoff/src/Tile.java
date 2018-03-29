@@ -46,11 +46,15 @@ public class Tile extends Actor{
             setImage("rsrc/1024tile.png");
         }
     }
-    public int getValue(){
-        return value;
+    public String getName(){
+        return n;
     }
-
-
+    public void setName(String name){
+        n = name;
+    }
+    public boolean equals(Tile tile){
+        return this.getName().equals(tile.getName());
+    }
 
 
     public boolean hasRight ()
@@ -60,10 +64,7 @@ public class Tile extends Actor{
                 return false;
             else
                 return true;
-        }
-            return false;
-        else
-            return true;
+
     }
 
     public boolean hasLeft() {

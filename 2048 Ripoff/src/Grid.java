@@ -33,7 +33,7 @@ public class Grid extends World {
 
     }
     public void act()
-    {/*
+    {
         if (Mayflower.isKeyPressed(Keyboard.KEY_UP) && (!Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT)))
         {
             for (int i = 0; i < tiles.size(); i++)
@@ -76,7 +76,7 @@ public class Grid extends World {
                     tiles.get(i).setLocation(tiles.get(i).getX()+ 65, tiles.get(i).getY() );
                 }
             }
-        }*/
+        }
 
 
     }
