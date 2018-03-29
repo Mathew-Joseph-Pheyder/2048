@@ -84,8 +84,9 @@ public class Tile extends Actor{
             return false;
         else
             return true;
+
     }
-    
+
 
 
     public void act() {

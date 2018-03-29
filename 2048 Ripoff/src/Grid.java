@@ -26,6 +26,9 @@ public class Grid extends World {
         tiles.add(new Tile(2));
         tiles.add(new Tile(4));
         tiles.add(new Tile(8));
+        //tiles.add(new Tile(16));
+        //tiles.add(new Tile(32));
+
 
 
         for(int i=0; i<tiles.size();i++)
@@ -35,9 +38,6 @@ public class Grid extends World {
             addObject(tiles.get(i),xPos*65,yPos*65);
             tileMap[yPos][xPos]=1;
         }
-
-        //1 -> added tile
-
 
         print2D();
     }
@@ -70,61 +70,86 @@ public class Grid extends World {
         }
         System.out.println("-------------------------------");
     }
+    public void moveRemaining()
+    {
 
+    }
+    public void up()
+    {
+        for (int i = 0; i < tiles.size(); i++)
+        {
+            while ((tiles.get(i).getY() > 0) && !tiles.get(i).hasTop())
+            {
+                tiles.get(i).setLocation(tiles.get(i).getX(), tiles.get(i).getY() - 65);
 
+            }
+        }
+        update2D();
+        print2D();
+    }
+    public void down()
+    {
+        for (int i = 0; i < tiles.size(); i++)
+        {
+            while ((tiles.get(i).getY() < 132) && !tiles.get(i).hasBottom())
+            {
+                tiles.get(i).setLocation(tiles.get(i).getX(), tiles.get(i).getY() + 65);
+            }
+        }
+        update2D();
+        print2D();
+    }
+    public void left()
+    {
+        for (int i = 0; i < tiles.size(); i++)
+        {
+            while ((tiles.get(i).getX() > 0)&& !tiles.get(i).hasLeft())
+            {
+                tiles.get(i).setLocation(tiles.get(i).getX()- 65, tiles.get(i).getY() );
+            }
+        }
+        update2D();
+        print2D();
+    }
+    public void right()
+    {
+        for (int i = 0; i < tiles.size(); i++)
+        {
+            while ((tiles.get(i).getX() < 132)&& !tiles.get(i).hasRight())
+            {
+                tiles.get(i).setLocation(tiles.get(i).getX()+ 65, tiles.get(i).getY() );
+            }
+        }
+        update2D();
+        print2D();
+    }
     public void act()
     {
         if (Mayflower.isKeyPressed(Keyboard.KEY_UP) && (!Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT)))
         {
-            for (int i = 0; i < tiles.size(); i++)
-            {
-                while ((tiles.get(i).getY() > 0) && !tiles.get(i).hasTop())
-                {
-                    tiles.get(i).setLocation(tiles.get(i).getX(), tiles.get(i).getY() - 65);
-
-                }
-            }
-            update2D();
-            print2D();
+            up();
+            up();
+            up();
         }
-
         if (Mayflower.isKeyPressed(Keyboard.KEY_DOWN) && (!Mayflower.isKeyDown(Keyboard.KEY_UP) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT)))
         {
-            for (int i = 0; i < tiles.size(); i++)
-            {
-                while ((tiles.get(i).getY() < 132) && !tiles.get(i).hasBottom())
-                {
-                    tiles.get(i).setLocation(tiles.get(i).getX(), tiles.get(i).getY() + 65);
-                }
-            }
-            update2D();
-            print2D();
+            down();
+            down();
+            down();
         }
 
         if (Mayflower.isKeyPressed(Keyboard.KEY_LEFT) && (!Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_UP) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT)))
         {
-            for (int i = 0; i < tiles.size(); i++)
-            {
-                while ((tiles.get(i).getX() > 0)&& !tiles.get(i).hasLeft())
-                {
-                    tiles.get(i).setLocation(tiles.get(i).getX()- 65, tiles.get(i).getY() );
-                }
-            }
-            update2D();
-            print2D();
+            left();
+            left();
+            left();
         }
 
         if (Mayflower.isKeyPressed(Keyboard.KEY_RIGHT) && (!Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_UP) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT)))
         {
-            for (int i = 0; i < tiles.size(); i++)
-            {
-                while ((tiles.get(i).getX() < 132)&& !tiles.get(i).hasRight())
-                {
-                    tiles.get(i).setLocation(tiles.get(i).getX()+ 65, tiles.get(i).getY() );
-                }
-            }
-            update2D();
-            print2D();
+            right();
+            right();
+            right();
         }
 
 
