@@ -15,7 +15,6 @@ public class Tile extends Actor{
         n=name;
         value = num;
         if(num == 2){
-            System.out.println("2 added");
             setImage("rsrc/2tile.png");
         }
         else if(num == 4){
@@ -63,12 +62,6 @@ public class Tile extends Actor{
         if (r.isEmpty())
                 return false;
             else
-                for(int i = 0; i < r.size(); i++){
-                    if(this.equals(r.get(i))){
-                        merge();
-                        return false;
-                    }
-                }
                 return true;
     }
 
@@ -77,12 +70,6 @@ public class Tile extends Actor{
         if (r.isEmpty())
             return false;
         else
-            for(int i = 0; i < r.size(); i++){
-                if(this.equals(r.get(i))){
-                    merge();
-                    return false;
-                }
-            }
             return true;
     }
 
@@ -91,12 +78,6 @@ public class Tile extends Actor{
         if (r.isEmpty())
             return false;
         else
-            for(int i = 0; i < r.size(); i++){
-                if(this.equals(r.get(i))){
-                    merge();
-                    return false;
-                }
-            }
             return true;
     }
 
@@ -105,12 +86,6 @@ public class Tile extends Actor{
         if (r.isEmpty())
             return false;
         else
-            for(int i = 0; i < r.size(); i++){
-                if(this.equals(r.get(i))){
-                    merge();
-                    return false;
-                }
-            }
             return true;
 
     }
@@ -118,37 +93,6 @@ public class Tile extends Actor{
 
 
     public void act() {
-        if(value == 2){
-            System.out.println("2 added");
-            setImage("rsrc/2tile.png");
-        }
-        else if(value == 4){
-            setImage("rsrc/4tile.png");
-        }
-        else if(value == 8){
-            setImage("rsrc/8tile.png");
-        }
-        else if(value == 16){
-            setImage("rsrc/16tile.png");
-        }
-        else if(value == 32){
-            setImage("rsrc/32tile.png");
-        }
-        else if(value == 64){
-            setImage("rsrc/64tile.png");
-        }
-        else if(value == 128){
-            setImage("rsrc/128tile.png");
-        }
-        else if(value == 256){
-            setImage("rsrc/256tile.png");
-        }
-        else if(value == 512){
-            setImage("rsrc/512tile.png");
-        }
-        else if(value == 1024){
-            setImage("rsrc/1024tile.png");
-        }
 
         /*if (Mayflower.isKeyPressed(Keyboard.KEY_UP)) {
             System.out.println(n);
