@@ -64,7 +64,10 @@ public class Tile extends Actor{
                 return false;
             else
                 return true;
+<<<<<<< HEAD
 
+=======
+>>>>>>> f6475bb9852cc52189735525137f1e89fb3fa39e
     }
 
     public boolean hasLeft() {
