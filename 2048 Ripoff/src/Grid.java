@@ -123,11 +123,9 @@ public class Grid extends World {
                     tiles.get(i).setLocation(tiles.get(i).getX()+ 65, tiles.get(i).getY() );
                 }
             }
-<<<<<<< HEAD
-=======
             update2D();
             print2D();
->>>>>>> f6475bb9852cc52189735525137f1e89fb3fa39e
+
         }
 
 
