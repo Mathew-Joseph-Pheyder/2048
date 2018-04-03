@@ -14,34 +14,34 @@ public class Tile extends Actor{
     public Tile(int num, String name){
         n=name;
         value = num;
-        if(num == 2){
+        if(num == 1){
             setImage("rsrc/2tile.png");
         }
-        else if(num == 4){
+        else if(num == 2){
             setImage("rsrc/4tile.png");
         }
-        else if(num == 8){
+        else if(num == 3){
             setImage("rsrc/8tile.png");
         }
-        else if(num == 16){
+        else if(num == 4){
             setImage("rsrc/16tile.png");
         }
-        else if(num == 32){
+        else if(num == 5){
             setImage("rsrc/32tile.png");
         }
-        else if(num == 64){
+        else if(num == 6){
             setImage("rsrc/64tile.png");
         }
-        else if(num == 128){
+        else if(num == 7){
             setImage("rsrc/128tile.png");
         }
-        else if(num == 256){
+        else if(num == 8){
             setImage("rsrc/256tile.png");
         }
-        else if(num == 512){
+        else if(num == 9){
             setImage("rsrc/512tile.png");
         }
-        else if(num == 1024){
+        else if(num == 10){
             setImage("rsrc/1024tile.png");
         }
     }

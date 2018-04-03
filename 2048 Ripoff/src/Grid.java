@@ -17,15 +17,16 @@ public class Grid extends World {
 
         Random rand = new Random();
         Random rand1 = new Random();
+        Random rand2 = new Random();
         int xPos = 0;
         int yPos = 0;
+        int u = rand2.nextInt(9)+1;
+        tiles.add(new Tile(u));
 
         //this.addObject(new Tile(2),66,66);
         //this.addObject(new Tile(4),66,131);
         //this.addObject(new Tile(8),131,66);
-        tiles.add(new Tile(2));
-        tiles.add(new Tile(4));
-        tiles.add(new Tile(8));
+
         //tiles.add(new Tile(16));
         //tiles.add(new Tile(32));
 
@@ -35,12 +36,17 @@ public class Grid extends World {
         {
             xPos = rand.nextInt(3) + 1;
             yPos = rand1.nextInt(3) + 1;
+            while(tileMap[yPos][xPos]==1)
+            {
+                xPos = rand.nextInt(3) + 1;
+                yPos = rand1.nextInt(3) + 1;
+            }
             addObject(tiles.get(i),xPos*65,yPos*65);
             tileMap[yPos][xPos]=1;
         }
-
         print2D();
     }
+
 
     public void update2D()
     {
@@ -70,10 +76,7 @@ public class Grid extends World {
         }
         System.out.println("-------------------------------");
     }
-    public void moveRemaining()
-    {
 
-    }
     public void up()
     {
         for (int i = 0; i < tiles.size(); i++)
@@ -123,6 +126,27 @@ public class Grid extends World {
         update2D();
         print2D();
     }
+    public void add()
+    {
+        Random rand = new Random();
+        Random rand1 = new Random();
+        int xPos = 0;
+        int yPos = 0;
+        Random rand2 = new Random();
+        int g = rand2.nextInt(9)+1;
+        tiles.add(new Tile(g));
+
+        xPos = rand.nextInt(3) + 1;
+        yPos = rand1.nextInt(3) + 1;
+        while(tileMap[yPos][xPos]==1)
+        {
+            xPos = rand.nextInt(3) + 1;
+            yPos = rand1.nextInt(3) + 1;
+        }
+        addObject(tiles.get(tiles.size()-1),xPos*65,yPos*65);
+        tileMap[yPos][xPos]=1;
+        update2D();
+    }
     public void act()
     {
         if (Mayflower.isKeyPressed(Keyboard.KEY_UP) && (!Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT)))
@@ -130,12 +154,30 @@ public class Grid extends World {
             up();
             up();
             up();
+            up();
+            up();
+            up();
+            up();
+            up();
+            up();
+            up();
+            add();
         }
         if (Mayflower.isKeyPressed(Keyboard.KEY_DOWN) && (!Mayflower.isKeyDown(Keyboard.KEY_UP) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT)))
         {
             down();
             down();
             down();
+            down();
+            down();
+            down();
+            down();
+            down();
+            down();
+            down();
+            down();
+            down();
+            add();
         }
 
         if (Mayflower.isKeyPressed(Keyboard.KEY_LEFT) && (!Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_UP) && !Mayflower.isKeyDown(Keyboard.KEY_RIGHT)))
@@ -143,6 +185,16 @@ public class Grid extends World {
             left();
             left();
             left();
+            left();
+            left();
+            left();
+            left();
+            left();
+            left();
+            left();
+            left();
+            left();
+            add();
         }
 
         if (Mayflower.isKeyPressed(Keyboard.KEY_RIGHT) && (!Mayflower.isKeyDown(Keyboard.KEY_DOWN) && !Mayflower.isKeyDown(Keyboard.KEY_UP) && !Mayflower.isKeyDown(Keyboard.KEY_LEFT)))
@@ -150,6 +202,16 @@ public class Grid extends World {
             right();
             right();
             right();
+            right();
+            right();
+            right();
+            right();
+            right();
+            right();
+            right();
+            right();
+            right();
+            add();
         }
 
 
